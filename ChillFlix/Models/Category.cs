@@ -17,6 +17,8 @@ namespace ChillFlix.Models
         }
 
 
+        public Category() { }
+
         public Category(string name, List<Movie> movies)
         {
             Name = name;

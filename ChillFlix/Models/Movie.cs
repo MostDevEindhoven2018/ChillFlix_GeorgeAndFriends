@@ -17,6 +17,7 @@ namespace ChillFlix.Models
         // Do we want to double couple this or just let the category be a list of movies?
         public string Category { get; set; }
 
+        public Movie() { }
 
         public Movie( string title, string link, int length, string category)
         {
