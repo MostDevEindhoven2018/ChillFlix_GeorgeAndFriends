@@ -7,6 +7,9 @@ namespace ChillFlix.Models
 {
     public class Movie
     {
+        public int MovieID { get; set; }
+
+
         public string Title { get; set; }
         public string Link { get; set; }
         public int Length { get; set; }

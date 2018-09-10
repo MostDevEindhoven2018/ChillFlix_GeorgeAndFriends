@@ -1,27 +1,32 @@
-﻿using ChillFlix.Database;
-using ChillFlix.Models;
+﻿using ChillFlix.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASPNET_MVC_MolvenoReservationApplication.Data
+namespace ChillFlix.Database
 {
     public static class DbInitializer
     {
         public static void Initialize(ChillflixDbContext context)
         {
             context.Database.EnsureCreated();
-            Movie[] movies = new Movie[]
+            List<Movie> movies = new List<Movie>
             {
-                new Movie
+                new Movie("hi!", "https://www.youtube.com/watch?v=dQw4w9WgXcQ", 212, "Music Videos")
             };
+
+            Category[] categories = new Category[]
+            {
+                new Category("Music Videos", movies)
+            };
+
 
             if (!context.Movies.Any())
             {
-                foreach (Table t in Tables)
+                foreach (Movie m in movies)
                 {
-                    context.Tables.Add(t);
+                    context.Movies.Add(m);
                 }
 
                 context.SaveChanges();
@@ -29,9 +34,9 @@ namespace ASPNET_MVC_MolvenoReservationApplication.Data
 
             if (!context.Categories.Any())
             {
-                foreach (Guest g in Guests)
+                foreach (Category c in categories)
                 {
-                    context.Guests.Add(g);
+                    context.Categories.Add(c);
                 }
 
                 context.SaveChanges();
