@@ -14,11 +14,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.dateFormatted }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
+        <tr *ngFor="let movie of movies">
+            <td>{{ movie.Title }}</td>
+            <td>{{ movie.Link }}</td>
+            <td>{{ movie.Length }}</td>
         </tr>
     </tbody>
 </table>
